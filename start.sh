@@ -1,0 +1,3 @@
+export FLASK_ENV=development
+export FLASK_APP=exampleloginform_app.py
+flask run
