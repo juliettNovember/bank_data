@@ -1,3 +1,3 @@
 export FLASK_ENV=development
-export FLASK_APP=exampleloginform_app.py
+export FLASK_APP=bank_data.py
 flask run

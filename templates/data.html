@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kalkulator walut</title>
+    </head>
+    <body>
+        <label for="currency">Choose a currency:</label>
+        <form action="" method='POST'>
+        <select name="currency" id="currency">
+            {% for item in curr %}
+            <option value={{item['code']}}>{{item['code']}}</option>
+            {% endfor %}
+        </select>
+        
+            <label>Value:</label> <input type="text" name="value">
+            <input type="submit" value="Convert">
+        </form>
+        <br>
+       
+    </body>
+</html>
