@@ -24,13 +24,14 @@ def calculator():
         print("We received POST")
         print(request.form)
         #ponizej sa zmienne tylko dla mojego potwierdzenia, ze wybierana waluta i wartosc wyswietla sie w terminalu 
-        value_response = request.form['value']
+        value_response = float(request.form['value'])
         currency_response = request.form['currency']
-        return render_template("data.html", curr=rates)
+        for currency in rates:
+            if currency_response == currency['code']:
+                ask= float(currency['ask'])
+                result = ask * value_response
+                return render_template("data.html", val=result)
         
-#teraz mam jedynie problem z utworzeniem kalkulora
-
-
 
 if __name__=='__main__':
     app.run(debug=True)
