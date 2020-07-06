@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Kalkulator walut</title>
+        <link rel="stylesheet" type= "text/css" href="../static/style.css">
     </head>
     <body>
-        <label for="currency">Choose a currency:</label>
+        <div>
+        <label for="currency"><h3>Choose a currency:</h3></label>
         <form action="" method='POST'>
         <select name="currency" id="currency">
             {% for item in curr %}
@@ -13,12 +15,17 @@
             {% endfor %}
         </select>
         
-            <label>Value:</label> <input type="text" name="value">
+            <label>Value:</label> <input type="number" step="0.01" name="value">
             <input type="submit" value="Convert">
             
         </form>
-        <label for="currency"><strong>Your calculation result:</strong> {{val}}</label>
         <br>
-       
+        {% if val %}
+        <label for="currency"><strong>Your calculation result:  </strong>{{ask}} PLN * {{vr}}  ≈  {{val}} PLN </label>
+        {% else %}
+        <p hidden> <label for="currency"><strong>Your calculation result:</strong> {{val}}</label></p>
+        {% endif %}
+        <br>
+    </div>
     </body>
 </html>
